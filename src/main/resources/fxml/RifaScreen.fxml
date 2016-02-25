@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.lorenzo.tiemposmanager.gui.rifa.RifaPresenter">
+   <children>
+      <Label layoutX="14.0" layoutY="18.0" text="Nombre:" />
+      <TextField fx:id="txtName" layoutX="77.0" layoutY="14.0" />
+      <Label layoutX="14.0" layoutY="73.0" text="Numero:" />
+      <Button fx:id="btnAddNumber" layoutX="14.0" layoutY="102.0" mnemonicParsing="false" onAction="#selectNumero" prefHeight="25.0" prefWidth="81.0" text="Seleccionar" />
+      <Label layoutX="12.0" layoutY="140.0" text="Cantidad:" />
+      <TextField fx:id="txtMontoNumero" layoutX="72.0" layoutY="136.0" prefHeight="25.0" prefWidth="110.0" />
+      <Button fx:id="btnAnnadir" layoutX="16.0" layoutY="175.0" mnemonicParsing="false" onAction="#annadirNumero" text="Annadir" />
+      <ListView fx:id="lstView" layoutX="14.0" layoutY="219.0" prefHeight="100.0" prefWidth="352.0" />
+      <Separator layoutX="14.0" layoutY="55.0" prefHeight="0.0" prefWidth="400.0" />
+      <Separator layoutX="14.0" layoutY="334.0" prefHeight="3.0" prefWidth="400.0" />
+      <Button fx:id="btnPrint" layoutX="14.0" layoutY="344.0" mnemonicParsing="false" onAction="#print" text="Imprimir" />
+      <Label fx:id="lblFecha" layoutX="455.0" layoutY="39.0" text="Fecha: " />
+      <Label fx:id="lblTipoRifa" layoutX="455.0" layoutY="10.0" prefHeight="17.0" prefWidth="110.0" />
+      <Label fx:id="lblCurrentNumero" layoutX="72.0" layoutY="73.0" text="" />
+      <Button layoutX="379.0" layoutY="294.0" mnemonicParsing="false" text="Eliminar" onAction="#eliminarNumero" />
+   </children>
+</Pane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.lorenzo.tiemposmanager.gui.settings.SettingsPresenter">
+   <children>
+      <Pane>
+         <children>
+            <VBox prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <Pane prefHeight="99.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Numeros retringidos:" />
+                        <Label fx:id="lblNumeroRestringidos" layoutX="14.0" layoutY="31.0" text="" />
+                        <Button fx:id="btnNumRestringidos" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#add" text="Anadir numeros" />
+                        <Separator layoutX="297.0" layoutY="7.0" orientation="VERTICAL" prefHeight="86.0" prefWidth="7.0" />
+                        <Label layoutX="312.0" layoutY="14.0" text="Limite numeros restringidos" />
+                        <TextField fx:id="tfLimite" layoutX="312.0" layoutY="36.0" />
+                        <Button layoutX="470.0" layoutY="36.0" mnemonicParsing="false" onAction="#setLimite" text="Establecer limite" />
+                     </children>
+                  </Pane>
+                  <Separator prefWidth="200.0" />
+                  <Pane prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="9.0" layoutY="14.0" text="Tipos de Rifas:" />
+                        <Label fx:id="lblTipoRifas" layoutX="92.0" layoutY="14.0" text="" />
+                        <Button fx:id="btnTipoRifas" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#openPopupTipoIniciativa" text="Añadir tipos de rifas" />
+                     </children>
+                  </Pane>
+                  <Separator prefWidth="200.0" />
+                  <Pane prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Separator layoutX="297.0" layoutY="8.0" orientation="VERTICAL" prefHeight="86.0" prefWidth="0.0" />
+                        <Label layoutX="14.0" layoutY="6.0" text="Encabezado:" />
+                        <Label layoutX="303.0" layoutY="6.0" text="Pie de pagina:" />
+                        <Button layoutX="225.0" layoutY="2.0" mnemonicParsing="false" text="Guardar" onAction="#setHeader" />
+                        <Button layoutX="527.0" layoutY="2.0" mnemonicParsing="false" text="Guardar" onAction="#setFooter"  />
+                     </children>
+                  </Pane>
+                  <Separator prefWidth="200.0" />
+                  <Pane prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <TextArea fx:id="txaHeader" layoutX="14.0" layoutY="-73.0" prefHeight="59.0" prefWidth="269.0" />
+                        <TextArea fx:id="txaFooter" layoutX="308.0" layoutY="-73.0" prefHeight="59.0" prefWidth="282.0" />
+                     </children></Pane>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</Pane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="298.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.lorenzo.tiemposmanager.gui.settings.TipoRifaPresenter">
+   <children>
+      <ListView fx:id="lstView" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="270.0" />
+      <TextField fx:id="txtNombre" layoutX="14.0" layoutY="227.0" />
+      <Button layoutX="170.0" layoutY="227.0" mnemonicParsing="false" onAction="#addElement" text="Añadir" />
+      <Button layoutX="235.0" layoutY="269.0" mnemonicParsing="false" onAction="#close" text="Cerrar" />
+      <Separator layoutX="14.0" layoutY="260.0" prefHeight="0.0" prefWidth="270.0" />
+      <Button layoutX="232.0" layoutY="227.0" mnemonicParsing="false" text="Borrar" onAction="#delete" />
+   </children>
+</Pane>

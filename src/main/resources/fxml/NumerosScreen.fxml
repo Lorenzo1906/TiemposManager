@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="496.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.lorenzo.tiemposmanager.gui.rifa.NumerosPresenter">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="358.0" prefWidth="456.0">
+         <children>
+            <VBox fx:id="pnOne" layoutX="14.0" layoutY="10.0" prefHeight="340.0" prefWidth="80.0" />
+            <Separator layoutX="94.0" layoutY="10.0" orientation="VERTICAL" prefHeight="340.0" prefWidth="6.0" />
+            <VBox fx:id="pnTwo" layoutX="100.0" layoutY="10.0" prefHeight="340.0" prefWidth="80.0" />
+            <Separator layoutX="177.0" layoutY="10.0" orientation="VERTICAL" prefHeight="340.0" prefWidth="6.0" />
+            <VBox fx:id="pnThree" layoutX="183.0" layoutY="10.0" prefHeight="340.0" prefWidth="80.0" />
+            <Separator layoutX="272.0" layoutY="10.0" orientation="VERTICAL" prefHeight="340.0" prefWidth="0.0" />
+            <VBox fx:id="pnFour" layoutX="278.0" layoutY="10.0" prefHeight="340.0" prefWidth="80.0" />
+            <Separator layoutX="358.0" layoutY="10.0" orientation="VERTICAL" prefHeight="340.0" prefWidth="0.0" />
+            <VBox fx:id="pnFive" layoutX="364.0" layoutY="10.0" prefHeight="340.0" prefWidth="80.0" />
+         </children>
+      </Pane>
+      <Button layoutX="411.0" layoutY="401.0" mnemonicParsing="false" text="Guardar" onAction="#save" />
+      <Button layoutX="332.0" layoutY="401.0" mnemonicParsing="false" text="Cancelar" onAction="#close" />
+   </children>
+</Pane>
