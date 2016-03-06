@@ -14,21 +14,21 @@
                <children>
                   <Pane prefHeight="99.0" prefWidth="600.0">
                      <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Numeros retringidos:" />
+                        <Label layoutX="14.0" layoutY="14.0" text="%restricted.number.title" />
                         <Label fx:id="lblNumeroRestringidos" layoutX="14.0" layoutY="31.0" text="" />
-                        <Button fx:id="btnNumRestringidos" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#add" text="Anadir numeros" />
+                        <Button fx:id="btnNumRestringidos" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#add" text="%restricted.number.add.number" />
                         <Separator layoutX="297.0" layoutY="7.0" orientation="VERTICAL" prefHeight="86.0" prefWidth="7.0" />
-                        <Label layoutX="312.0" layoutY="14.0" text="Limite numeros restringidos" />
+                        <Label layoutX="312.0" layoutY="14.0" text="%restricted.number.limit" />
                         <TextField fx:id="tfLimite" layoutX="312.0" layoutY="36.0" />
-                        <Button layoutX="470.0" layoutY="36.0" mnemonicParsing="false" onAction="#setLimite" text="Establecer limite" />
+                        <Button layoutX="470.0" layoutY="36.0" mnemonicParsing="false" onAction="#setLimite" text="%restricted.number.set.limit" />
                      </children>
                   </Pane>
                   <Separator prefWidth="200.0" />
                   <Pane prefHeight="100.0" prefWidth="600.0">
                      <children>
-                        <Label layoutX="9.0" layoutY="14.0" text="Tipos de Rifas:" />
+                        <Label layoutX="9.0" layoutY="14.0" text="%type.raffle.title" />
                         <Label fx:id="lblTipoRifas" layoutX="92.0" layoutY="14.0" text="" />
-                        <Button fx:id="btnTipoRifas" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#openPopupTipoIniciativa" text="Añadir tipos de rifas" />
+                        <Button fx:id="btnTipoRifas" layoutX="14.0" layoutY="49.0" mnemonicParsing="false" onAction="#openPopupTipoIniciativa" text="%type.raffle.add.title" />
                      </children>
                   </Pane>
                   <Separator prefWidth="200.0" />
@@ -37,8 +37,8 @@
                         <Separator layoutX="297.0" layoutY="8.0" orientation="VERTICAL" prefHeight="86.0" prefWidth="0.0" />
                         <Label layoutX="14.0" layoutY="6.0" text="Encabezado:" />
                         <Label layoutX="303.0" layoutY="6.0" text="Pie de pagina:" />
-                        <Button layoutX="225.0" layoutY="2.0" mnemonicParsing="false" text="Guardar" onAction="#setHeader" />
-                        <Button layoutX="527.0" layoutY="2.0" mnemonicParsing="false" text="Guardar" onAction="#setFooter"  />
+                        <Button layoutX="225.0" layoutY="2.0" mnemonicParsing="false" text="%general.save" onAction="#setHeader" />
+                        <Button layoutX="527.0" layoutY="2.0" mnemonicParsing="false" text="%general.save" onAction="#setFooter"  />
                      </children>
                   </Pane>
                   <Separator prefWidth="200.0" />

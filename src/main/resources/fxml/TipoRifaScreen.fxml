@@ -8,9 +8,9 @@
    <children>
       <ListView fx:id="lstView" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="270.0" />
       <TextField fx:id="txtNombre" layoutX="14.0" layoutY="227.0" />
-      <Button layoutX="170.0" layoutY="227.0" mnemonicParsing="false" onAction="#addElement" text="Añadir" />
-      <Button layoutX="235.0" layoutY="269.0" mnemonicParsing="false" onAction="#close" text="Cerrar" />
+      <Button layoutX="170.0" layoutY="227.0" mnemonicParsing="false" onAction="#addElement" text="%general.add" />
+      <Button layoutX="235.0" layoutY="269.0" mnemonicParsing="false" onAction="#close" text="%general.close" />
       <Separator layoutX="14.0" layoutY="260.0" prefHeight="0.0" prefWidth="270.0" />
-      <Button layoutX="232.0" layoutY="227.0" mnemonicParsing="false" text="Borrar" onAction="#delete" />
+      <Button layoutX="232.0" layoutY="227.0" mnemonicParsing="false" text="%general.delete" onAction="#delete" />
    </children>
 </Pane>

@@ -33,6 +33,9 @@ import net.lorenzo.tiemposmanager.service.RifaService;
 import net.lorenzo.tiemposmanager.utils.Impresora;
 import net.lorenzo.tiemposmanager.utils.PrintableLine;
 import static net.lorenzo.tiemposmanager.utils.Utils.generatePopup;
+import static net.lorenzo.tiemposmanager.utils.Utils.getText;
+
+import net.lorenzo.tiemposmanager.utils.Utils;
 import org.controlsfx.control.NotificationPane;
 import org.controlsfx.control.PopOver;
 import org.slf4j.Logger;
@@ -142,7 +145,7 @@ public class RifaPresenter {
             if(validateNumero(tmpNumero, tmpMonto)){
                 lstView.getItems().add(new HBoxCell(tmpNumero.toString(), tmpMonto.toString()));
             }else{
-                ((NotificationPane)getView().getParent()).show("El monto supera el limite diario para el numero especificado");
+                ((NotificationPane)getView().getParent()).show(Utils.getText("restricted.number.exception"));
             }
         }
         
@@ -173,14 +176,14 @@ public class RifaPresenter {
     public void eliminarNumero(ActionEvent event) {
         int indexSelect = lstView.getSelectionModel().getSelectedIndex();
         lstView.getItems().remove(indexSelect);
-        ((NotificationPane)getView().getParent()).show("Numero eliminado");
+        ((NotificationPane)getView().getParent()).show(getText("raffle.number.removed"));
     }
     
     public void print(ActionEvent event){
         log.info("Printing numero");
 
         if(txtName.getText().equals("")){
-            ((NotificationPane)getView().getParent()).show("Ingrese el nombre");
+            ((NotificationPane)getView().getParent()).show(getText("raffle.number.add.name"));
             return;
         }
         
@@ -212,7 +215,7 @@ public class RifaPresenter {
             updateNumero(tmpNumero, tmpMonto);
         }
         
-        ((NotificationPane)getView().getParent()).show("Los datos fueron guardados");
+        ((NotificationPane)getView().getParent()).show(getText("raffle.number.saved.data"));
     }
     
     private void updateNumero(Integer argNumero, Double argMonto){

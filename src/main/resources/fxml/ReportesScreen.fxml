@@ -10,14 +10,14 @@
       <ComboBox fx:id="cbTiposRifa" layoutX="75.0" layoutY="10.0" prefWidth="150.0" />
       <Label layoutX="245.0" layoutY="14.0" text="Fecha:" />
       <DatePicker fx:id="dpFecha" layoutX="290.0" layoutY="10.0" />
-      <Button layoutX="502.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBuscar" text="Buscar" />
+      <Button layoutX="502.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBuscar" text="%general.search" />
       <Separator layoutX="14.0" layoutY="54.0" prefHeight="0.0" prefWidth="570.0" />
       <TableView fx:id="tvData" layoutX="14.0" layoutY="63.0" prefHeight="286.0" prefWidth="568.0">
         <columns>
-          <TableColumn fx:id="colNum" prefWidth="168.0" text="Numero" />
-          <TableColumn fx:id="colMon" prefWidth="400.0" text="Monto" />
+          <TableColumn fx:id="colNum" prefWidth="168.0" text="%general.number" />
+          <TableColumn fx:id="colMon" prefWidth="400.0" text="%general.amount" />
         </columns>
       </TableView>
-      <Button layoutX="520.0" layoutY="361.0" mnemonicParsing="false" text="Imprimir" onAction="#onPrint" />
+      <Button layoutX="520.0" layoutY="361.0" mnemonicParsing="false" text="%general.print" onAction="#onPrint" />
    </children>
 </Pane>

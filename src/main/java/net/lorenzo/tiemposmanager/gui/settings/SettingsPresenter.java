@@ -25,6 +25,8 @@ import net.lorenzo.tiemposmanager.service.ConfigService;
 import net.lorenzo.tiemposmanager.service.NumeroProhibidoService;
 import net.lorenzo.tiemposmanager.service.TipoRifaService;
 import static net.lorenzo.tiemposmanager.utils.Utils.generatePopup;
+import static net.lorenzo.tiemposmanager.utils.Utils.getText;
+
 import org.controlsfx.control.NotificationPane;
 import org.controlsfx.control.PopOver;
 import org.slf4j.Logger;
@@ -164,10 +166,10 @@ public class SettingsPresenter implements Initializable{
             configLimite.setValue(tmpNewLimite.toString());
             
             configService.save(configLimite);
-            ((NotificationPane)getView().getParent()).show("Limite establecido correctamente");
+            ((NotificationPane)getView().getParent()).show(getText("restricted.number.limit.settled"));
         }catch(NumberFormatException ex){
             log.error(ex.getLocalizedMessage());
-            ((NotificationPane)getView().getParent()).show("Solo ingrese numeros en el limite");
+            ((NotificationPane)getView().getParent()).show(getText("restricted.number.limit.exception"));
         }
     }
     
@@ -176,7 +178,7 @@ public class SettingsPresenter implements Initializable{
         configHeader.setValue(txaHeader.getText());
         configService.save(configHeader);
         
-        ((NotificationPane)getView().getParent()).show("Encabezado guardado correctamente");
+        ((NotificationPane)getView().getParent()).show(getText("settings.header.saved"));
     }
 
     public void setFooter(ActionEvent event){
@@ -184,7 +186,7 @@ public class SettingsPresenter implements Initializable{
         configFooter.setValue(txaFooter.getText());
         configService.save(configFooter);
         
-        ((NotificationPane)getView().getParent()).show("Pie de pagina guardada correctamente");
+        ((NotificationPane)getView().getParent()).show(getText("settings.footer.saved"));
     }
     
     public Node getView(){

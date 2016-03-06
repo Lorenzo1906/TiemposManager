@@ -34,7 +34,6 @@ public class MainApp extends Application {
         stage.initStyle(StageStyle.UTILITY);
 
         Platform.runLater(stage::show);
-
         stage.show();
     }
 }

@@ -11,6 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Region;
 import org.controlsfx.control.PopOver;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 /**
  *
  * @author Lorenzo
@@ -31,5 +34,10 @@ public class Utils {
         popToOpen.setDetachable(false);
         popToOpen.autoHideProperty();
         popToOpen.show(callingElement.getParent(), clickX, clickY);
+    }
+
+    public static String getText(String argKey) {
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("bundles.bundle", new Locale("es", "ES"));
+        return resourceBundle.getString(argKey);
     }
 }

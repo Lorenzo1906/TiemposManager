@@ -8,6 +8,9 @@ package net.lorenzo.tiemposmanager.gui.main;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,6 +26,8 @@ import net.lorenzo.tiemposmanager.service.NumeroProhibidoService;
 import net.lorenzo.tiemposmanager.service.NumeroService;
 import net.lorenzo.tiemposmanager.service.RifaService;
 import net.lorenzo.tiemposmanager.service.TipoRifaService;
+import net.lorenzo.tiemposmanager.utils.LoadPresenter;
+import net.lorenzo.tiemposmanager.utils.Utils;
 import org.controlsfx.control.NotificationPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -86,13 +91,13 @@ public class MainPresenter {
         try {
             log.info("Generating tab Rifa");
             
-            RifaPresenter controller =  loadPresenter("/fxml/RifaScreen.fxml");
+            RifaPresenter controller = LoadPresenter.getInstance().load("/fxml/RifaScreen.fxml");
             controller.setTipoRifa(argTipoRifa);
             controller.setRifaService(rifaService);
             controller.setNumeroService(numeroService);
             controller.setConfigService(configService);
             controller.setNumeroProhibidoService(numeroProhibidoService);
-            controller.setNumerosPresenter(loadPresenter("/fxml/NumerosScreen.fxml"));
+            controller.setNumerosPresenter(LoadPresenter.getInstance().load("/fxml/NumerosScreen.fxml"));
             controller.loadRifa();
             
             
@@ -133,16 +138,5 @@ public class MainPresenter {
         notificationPane.setShowFromTop(false);
         
         return notificationPane;
-    }
-    
-    private <T> T loadPresenter(String fxmlFile){
-        try{
-            FXMLLoader loader = new FXMLLoader();
-            loader.load(getClass().getResourceAsStream(fxmlFile));
-            return (T) loader.getController();
-        }
-        catch (IOException e){
-            throw new RuntimeException(String.format("Unable to load FXML file '%s'", fxmlFile), e);
-        }
     }
 }

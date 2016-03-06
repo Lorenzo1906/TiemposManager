@@ -6,7 +6,10 @@
 package net.lorenzo.tiemposmanager;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Properties;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXMLLoader;
 import javax.sql.DataSource;
 import net.lorenzo.tiemposmanager.gui.main.MainPresenter;
@@ -26,6 +29,8 @@ import net.lorenzo.tiemposmanager.service.impl.NumeroProhibidoServiceImpl;
 import net.lorenzo.tiemposmanager.service.impl.NumeroServiceImpl;
 import net.lorenzo.tiemposmanager.service.impl.RifaServiceImpl;
 import net.lorenzo.tiemposmanager.service.impl.TipoRifaServiceImpl;
+import net.lorenzo.tiemposmanager.utils.LoadPresenter;
+import net.lorenzo.tiemposmanager.utils.Utils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -47,37 +52,37 @@ import org.springframework.transaction.PlatformTransactionManager;
 public class TiemposManagerAppFactory {
     @Bean
     public MainPresenter mainPresenter(){
-        return loadPresenter("/fxml/MainScreen.fxml");
+        return LoadPresenter.getInstance().load("/fxml/MainScreen.fxml");
     }
     
     @Bean
     public SettingsPresenter settingsPresenter(){
-        return loadPresenter("/fxml/SettingsScreen.fxml");
+        return LoadPresenter.getInstance().load("/fxml/SettingsScreen.fxml");
     }
 
     @Bean
     public NumerosRestringidosPresenter numerosRestringidosPresenter(){
-        return loadPresenter("/fxml/NumerosRestringidosScreen.fxml");
+        return LoadPresenter.getInstance().load("/fxml/NumerosRestringidosScreen.fxml");
     }
     
     @Bean
     public NumerosPresenter numerosPresenter(){
-        return loadPresenter("/fxml/NumerosScreen.fxml");
+        return LoadPresenter.getInstance().load("/fxml/NumerosScreen.fxml");
     }
     
     @Bean
     public TipoRifaPresenter tipoRifaPresenter(){
-        return loadPresenter("/fxml/TipoRifaScreen.fxml");
+        return LoadPresenter.getInstance().load("/fxml/TipoRifaScreen.fxml");
     }
     
     @Bean
     public RifaPresenter rifaPresenter(){
-        return loadPresenter("/fxml/RifaScreen.fxml");
+        return LoadPresenter.getInstance().load("/fxml/RifaScreen.fxml");
     }
     
     @Bean
     public ReportePresenter reportePresenter(){
-        return loadPresenter("/fxml/ReportesScreen.fxml");
+        return LoadPresenter.getInstance().load("/fxml/ReportesScreen.fxml");
     }
     
     @Bean
@@ -154,16 +159,5 @@ public class TiemposManagerAppFactory {
 
         return transactionManager;
 
-    }
-
-    private <T> T loadPresenter(String fxmlFile){
-        try{
-            FXMLLoader loader = new FXMLLoader();
-            loader.load(getClass().getResourceAsStream(fxmlFile));
-            return (T) loader.getController();
-        }
-        catch (IOException e){
-            throw new RuntimeException(String.format("Unable to load FXML file '%s'", fxmlFile), e);
-        }
     }
 }

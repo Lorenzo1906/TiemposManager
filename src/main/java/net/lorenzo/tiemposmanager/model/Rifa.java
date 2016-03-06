@@ -8,13 +8,8 @@ package net.lorenzo.tiemposmanager.model;
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
+import javax.persistence.*;
+
 import static javax.persistence.TemporalType.DATE;
 /**
  *
@@ -32,7 +27,7 @@ public class Rifa implements Serializable {
     @ManyToOne
     private TipoRifa tipo;
     
-    @OneToMany(mappedBy = "rifa")
+    @OneToMany(mappedBy = "rifa", cascade = CascadeType.ALL)
     private List<Numero> numeros;
 
     public Rifa() {

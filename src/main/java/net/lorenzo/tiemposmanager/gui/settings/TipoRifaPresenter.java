@@ -20,9 +20,12 @@ import javafx.scene.layout.Priority;
 import javax.inject.Inject;
 import net.lorenzo.tiemposmanager.model.TipoRifa;
 import net.lorenzo.tiemposmanager.service.TipoRifaService;
+import net.lorenzo.tiemposmanager.utils.Utils;
 import org.controlsfx.control.NotificationPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import static net.lorenzo.tiemposmanager.utils.Utils.getText;
 
 /**
  *
@@ -46,7 +49,7 @@ public class TipoRifaPresenter {
         log.info("Closing popup");
         settingsPresenter.closePopupTipoRifa();
         settingsPresenter.inicializeSettings();
-        ((NotificationPane)settingsPresenter.getView().getParent()).show("Reinicie la aplicacion");
+        ((NotificationPane)settingsPresenter.getView().getParent()).show(getText("settings.restart.app"));
     }
     
     public void addElement(ActionEvent event) {
